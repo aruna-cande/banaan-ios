@@ -10,13 +10,7 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      - xcodebuild \
-        -project ios-test2/banaan.xcodeproj \
-        -scheme banaan \
-        -sdk iphonesimulator \
-        -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' \
-        test | xcpretty
-      - xcode-project build-ipa --project "ios-test2/banaan.xcodeproj" --scheme "banaan"
+      - xcodebuild -project ios-test2/banaan.xcodeproj  -scheme banaan -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' test | xcpretty
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
