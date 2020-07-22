@@ -9,6 +9,9 @@ workflows:
       flutter: stable
       xcode: edge
       cocoapods: default
+    cache:
+      cache_paths:
+        - ~/.pub-cache
     scripts:
       - xcodebuild -project ios-test2/banaan.xcodeproj  -scheme banaan -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6' test | xcpretty
     artifacts:
